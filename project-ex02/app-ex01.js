@@ -1,5 +1,5 @@
 /**
- * naolj83-math.js 모듈 테스트ㅜㅜㅐ
+ * naolj83-math 파일 모듈 테스트
  */
 
 const dzMath = require('../naolj83-math/naolj83-math');
