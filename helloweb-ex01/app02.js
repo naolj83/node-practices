@@ -5,7 +5,7 @@ const port = 8080;
 const server = http.createServer(function(req, resp){
     console.log(req.url);
     if(req.url === '/'){
-        req.url = '/index.html';
+        req.url = '/hello.html';
     } 
 
     fs.readFile(__dirname + "/public" + req.url, function(error, data){
@@ -18,5 +18,5 @@ const server = http.createServer(function(req, resp){
 
 server.listen(port, function(){
     console.log(`Http Server running on port ${port}`);
-})
+});
 
