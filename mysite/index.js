@@ -11,9 +11,11 @@ dotenv.config({path: path.join(__dirname, 'config/db.env')});
 const mainRouter = require('./routes/main');
 const userRouter = require('./routes/user');
 const guestbookRouter = require('./routes/guestbook');
+const errorRoute = require('./routes/error');
 
 // Logging
 const logger = require('./logging');
+const { use } = require('./routes/main');
 
 // Application Setup
 const application = express()
@@ -40,20 +42,9 @@ const application = express()
     .use('/', mainRouter)
     .use('/user', userRouter)
     .use('/guestbook', guestbookRouter)
-    // 404 error
-    .use(function(req, res){
-        res.status(404).render('error/404')
-    })
-    // 500 error
-    .use(function(err, req, res, next){
-        // 로깅처리
-        // err.name, err.message, err.stack
-        logger.error(err.stack);
+    .use(errorRoute.error404)
+    .use(errorRoute.error500);
 
-        // 사과페이지
-        // res.status(500).render('error/500');
-        res.status(500).send(`<pre>${err.stack}</pre>`);    // 개발용
-    });
 
 // Server Setup    
 http.createServer(application)
