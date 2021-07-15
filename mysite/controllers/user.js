@@ -16,8 +16,8 @@ module.exports = {
                 gender: req.body.gender
             });
             res.redirect('/user/joinsuccess');
-        } catch(e) {
-            next(e);
+        } catch(err) {
+            next(err);
         }   
     },
     login: function(req, res, next){
@@ -81,9 +81,9 @@ module.exports = {
                     no: req.session.authUser.no    
                 }
             });
-            res.redirect("/user/update");
-        } catch(e) {
-            next(e);
+            res.redirect("/");
+        } catch(err) {
+            next(err);
         }    
     }
 }
