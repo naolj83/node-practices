@@ -1,7 +1,7 @@
 {
   "name": "mysite",
   "version": "1.0.0",
-  "description": "$ npm init -y",
+  "description": "$ npm i express\r $ npm i ejs\r $ npm i -D nodemon",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
