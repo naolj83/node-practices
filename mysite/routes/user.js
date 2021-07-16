@@ -1,6 +1,6 @@
 const express = require('express');
 const authorized = require('./authorized');
-const controller = require('../controllers/user');
+const controller = require('../controllers/user-api');
 
 const router = express.Router();
 router.route('/joinsuccess').get(controller.joinsuccess);

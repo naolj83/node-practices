@@ -18,6 +18,7 @@ $ npm i mysql2
 $ npm i moment
 $ npm i winston
 $ npm i winston-daily-rotate-file
+$ npm i multer
 $ npm i -D nodemon
 ```
 
@@ -48,7 +49,10 @@ $ npm i -D nodemon
     |--- /config
     |--- /logging
     |--- /logs
+    |--- /multer-temporary-store
     |--- /public
+    |       |--- assets
+    |              |--- gallery
     |--- /routes
     |--- /controllers
     |--- /models
