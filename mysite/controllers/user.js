@@ -1,4 +1,5 @@
 const models = require('../models');
+const logger = require('../logging');
 
 module.exports = {
     joinsuccess: function(req, res) {
@@ -16,16 +17,12 @@ module.exports = {
                 gender: req.body.gender
             });
             res.redirect('/user/joinsuccess');
-        } catch(err) {
-            next(err);
-        }   
-    },
-    login: function(req, res, next){
-        try {
-            res.render('user/login');
         } catch(e) {
             next(e);
-        }
+        }   
+    },
+    login: function(req, res){
+        res.render('user/login');
     },    
     _login: async function(req, res, next) {
         try {        
@@ -81,9 +78,9 @@ module.exports = {
                     no: req.session.authUser.no    
                 }
             });
-            res.redirect("/");
-        } catch(err) {
-            next(err);
+            res.redirect("/user/update");
+        } catch(e) {
+            next(e);
         }    
     }
 }

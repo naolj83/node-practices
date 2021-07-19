@@ -14,9 +14,12 @@ module.exports = {
                 guestbooks: results,
                 moment: moment
             });
-        } catch(e) {
+        } catch(e) { 
             next(e);
         }         
+    },
+    spalanding: function(req, res, next){
+        res.render('guestbook/spa-landing');
     },
     delete: function(req, res) {
         res.render('guestbook/delete');
