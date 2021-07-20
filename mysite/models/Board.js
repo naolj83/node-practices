@@ -1,12 +1,12 @@
-const {Sequelize, DataTypes} = require('sequelize');
+const { Sequelize, DataTypes } = require('sequelize');
 
-module.exports = function(sequelize){
-    return sequelize.define('User', {
-        no: {
+module.exports = function(sequelize) {
+    return sequelize.define('Board', {
+        no: { 
             field: 'no',
             type: DataTypes.BIGINT(11),
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true 
         },
         title: {
             field: 'title',
@@ -26,34 +26,30 @@ module.exports = function(sequelize){
         },
         hit: {
             field: 'hit',
-            type: DataTypes.BIGINT(11),
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         groupNo: {
             field: 'group_no',
-            type: DataTypes.BIGINT(11),
+            type: DataTypes.INTEGER,
             allowNull: true
         },
         orderNo: {
             field: 'order_no',
-            type: DataTypes.BIGINT(11),
+            type: DataTypes.INTEGER,
             allowNull: true
         },
         depth: {
             field: 'depth',
-            type: DataTypes.BIGINT(11),
+            type: DataTypes.INTEGER,
             allowNull: true
         },
     }, {
-        underscored: true,
+        underscored: true,    
         freezeTableName: true,
         timestamps: true,
         createdAt: false,
         updatedAt: false,
-        tableName: 'user'
+        tableName: 'board'
     });
 }
-
-
-
-
